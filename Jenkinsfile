@@ -58,7 +58,7 @@ pipeline
 		{
 			steps
 			{
-				sh "sudo kubectl set image deployment addressbook-dep iamdevopstrainer/ab-20210930:$BUILD_NUMBER --record=true"
+				sh "sudo kubectl set image deployment.apps/addressbook-dep addressbook-cont=iamdevopstrainer/ab-20210930:$BUILD_NUMBER --record=true"
 			}
 		}
 		

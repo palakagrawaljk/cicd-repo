@@ -42,7 +42,7 @@ pipeline
 				sh 'sudo mkdir -p /code/ppjob1/$BUILD_NUMBER'
 				sh 'sudo cp /var/lib/jenkins/workspace/ppjob1/target/addressbook.war /code/ppjob1/$BUILD_NUMBER/'
 				sh 'sudo cp /var/lib/jenkins/workspace/ppjob1/Dockerfile /code/ppjob1/$BUILD_NUMBER'
-				sh 'sudo docker build -f /code/ppjob1/$BUILD_NUMBER/Dockerfile -t iamdevopstrainer/ab-30Sep2021:$BUILD_NUMBER /code/ppjob1/$BUILD_NUMBER'
+				sh 'sudo docker build -f /code/ppjob1/$BUILD_NUMBER/Dockerfile -t iamdevopstrainer/ab-20210930:$BUILD_NUMBER /code/ppjob1/$BUILD_NUMBER'
 			}
 		}
 

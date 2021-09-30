@@ -39,10 +39,10 @@ pipeline
 		{
 			steps
 			{
-				sh 'sudo mkdir -p /code/ppjob1/$BUILD_NUMBER'
-				sh 'sudo cp /var/lib/jenkins/workspace/ppjob1/target/addressbook.war /code/ppjob1/$BUILD_NUMBER/'
-				sh 'sudo cp /var/lib/jenkins/workspace/ppjob1/Dockerfile /code/ppjob1/$BUILD_NUMBER'
-				sh 'sudo docker build -f /code/ppjob1/$BUILD_NUMBER/Dockerfile -t iamdevopstrainer/ab-20210930:$BUILD_NUMBER /code/ppjob1/$BUILD_NUMBER'
+				sh 'sudo mkdir -p /code/addressbook/$BUILD_NUMBER'
+				sh 'sudo cp /var/lib/jenkins/workspace/addressbook/target/addressbook.war /code/addressbook/$BUILD_NUMBER/'
+				sh 'sudo cp /var/lib/jenkins/workspace/addressbook/Dockerfile /code/addressbook/$BUILD_NUMBER'
+				sh 'sudo docker build -f /code/addressbook/$BUILD_NUMBER/Dockerfile -t iamdevopstrainer/abapp-20210930:$BUILD_NUMBER /code/addressbook/$BUILD_NUMBER'
 			}
 		}
 
@@ -50,7 +50,7 @@ pipeline
 		{
 			steps
 			{
-				sh "sudo docker push iamdevopstrainer/ab-20210930:$BUILD_NUMBER"
+				sh "sudo docker push iamdevopstrainer/abapp-20210930:$BUILD_NUMBER"
 			}
 		}
 
@@ -58,7 +58,7 @@ pipeline
 		{
 			steps
 			{
-				sh "sudo kubectl set image deployment.apps/addressbook-dep addressbook-cont=iamdevopstrainer/ab-20210930:$BUILD_NUMBER --record=true"
+				sh "sudo kubectl set image deployment.apps/addressbook-dep addressbook-cont=iamdevopstrainer/abapp-20210930:$BUILD_NUMBER --record=true"
 			}
 		}
 		

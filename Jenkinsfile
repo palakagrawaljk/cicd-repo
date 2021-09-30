@@ -50,7 +50,7 @@ pipeline
 		{
 			steps
 			{
-				sh "sudo docker push iamdevopstrainer/ab-30Sep2021:$BUILD_NUMBER"
+				sh "sudo docker push iamdevopstrainer/ab-20210930:$BUILD_NUMBER"
 			}
 		}
 
@@ -58,7 +58,7 @@ pipeline
 		{
 			steps
 			{
-				sh "sudo docker run -itd -P iamdevopstrainer/ab-30Sep2021:$BUILD_NUMBER"
+				sh "sudo docker run -itd -P iamdevopstrainer/ab-20210930:$BUILD_NUMBER"
 			}
 		}
 		

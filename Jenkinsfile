@@ -58,7 +58,7 @@ pipeline
 		{
 			steps
 			{
-				sh "sudo docker run -itd -P iamdevopstrainer/ab-20210930:$BUILD_NUMBER"
+				sh "sudo kubectl set image deployment addressbook-dep iamdevopstrainer/ab-20210930:$BUILD_NUMBER --record=true"
 			}
 		}
 		

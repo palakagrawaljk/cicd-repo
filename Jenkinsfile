@@ -39,10 +39,10 @@ pipeline
 		{
 			steps
 			{
-				sh "sudo mkdir -p /code/$PROJECT_NAME/$BUILD_NUMBER"
-				sh "sudo cp /var/lib/jenkins/workspace/$PROJECT_NAME/target/addressbook.war /code/$PROJECT_NAME/$BUILD_NUMBER/"
-				sh "sudo cp /var/lib/jenkins/workspace/$PROJECT_NAME/Dockerfile /code/$PROJECT_NAME/$BUILD_NUMBER/"
-				sh "sudo docker build -f /code/$PROJECT_NAME/$BUILD_NUMBER/Dockerfile -t iamdevopstrainer/ab-30Sep2021:$BUILD_NUMBER /code/$PROJECT_NAME/$BUILD_NUMBER"
+				sh "sudo mkdir -p /code/${env.PROJECT_NAME}/${env.BUILD_NUMBER}"
+				sh "sudo cp /var/lib/jenkins/workspace/${env.PROJECT_NAME}/target/addressbook.war /code/${env.PROJECT_NAME}/${env.BUILD_NUMBER}/"
+				sh "sudo cp /var/lib/jenkins/workspace/${env.PROJECT_NAME}/Dockerfile /code/${env.PROJECT_NAME}/${env.BUILD_NUMBER}/"
+				sh "sudo docker build -f /code/${env.PROJECT_NAME}/${env.BUILD_NUMBER}/Dockerfile -t iamdevopstrainer/ab-30Sep2021:${env.BUILD_NUMBER} /code/${env.PROJECT_NAME}/${env.BUILD_NUMBER}"
 			}
 		}
 

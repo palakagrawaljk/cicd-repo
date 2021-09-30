@@ -39,10 +39,10 @@ pipeline
 		{
 			steps
 			{
-				sh 'sudo mkdir -p /code/$PROJECT_NAME/$BUILD_NUMBER'
-				sh 'sudo cp /var/lib/jenkins/workspace/$PROJECT_NAME/target/addressbook.war /code/$PROJECT_NAME/$BUILD_NUMBER/'
-				sh 'sudo cp /var/lib/jenkins/workspace/$PROJECT_NAME/Dockerfile /code/$PROJECT_NAME/$BUILD_NUMBER/'
-				sh 'sudo docker build -f /code/$PROJECT_NAME/$BUILD_NUMBER/Dockerfile -t iamdevopstrainer/ab-30Sep2021:$BUILD_NUMBER /code/$PROJECT_NAME/$BUILD_NUMBER'
+				sh "sudo mkdir -p /code/$PROJECT_NAME/$BUILD_NUMBER"
+				sh "sudo cp /var/lib/jenkins/workspace/$PROJECT_NAME/target/addressbook.war /code/$PROJECT_NAME/$BUILD_NUMBER/"
+				sh "sudo cp /var/lib/jenkins/workspace/$PROJECT_NAME/Dockerfile /code/$PROJECT_NAME/$BUILD_NUMBER/"
+				sh "sudo docker build -f /code/$PROJECT_NAME/$BUILD_NUMBER/Dockerfile -t iamdevopstrainer/ab-30Sep2021:$BUILD_NUMBER /code/$PROJECT_NAME/$BUILD_NUMBER"
 			}
 		}
 
@@ -50,7 +50,7 @@ pipeline
 		{
 			steps
 			{
-				sh 'sudo docker push iamdevopstrainer/ab-30Sep2021:$BUILD_NUMBER'
+				sh "sudo docker push iamdevopstrainer/ab-30Sep2021:$BUILD_NUMBER"
 			}
 		}
 
@@ -58,7 +58,7 @@ pipeline
 		{
 			steps
 			{
-				sh 'sudo docker run -itd -P iamdevopstrainer/ab-30Sep2021:$BUILD_NUMBER'
+				sh "sudo docker run -itd -P iamdevopstrainer/ab-30Sep2021:$BUILD_NUMBER"
 			}
 		}
 		

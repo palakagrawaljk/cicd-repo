@@ -7,7 +7,7 @@ pipeline
 		{
 			steps
 			{
-				git 'https://github.com/iamdevopstrainer/DevOpsClassCodes'
+				git 'https://github.com/edureka-devops/projCert'
 			}
 		}
 		
@@ -40,9 +40,9 @@ pipeline
 			steps
 			{
 				sh 'mkdir -p /code/$PROJECT_NAME/$BUILD_NUMBER'
-				sh 'sudo cp /var/lib/jenkins/workspace/$PROJECT_NAME/target/addressbook.war /code/$PROJECT_NAME/$BUILD_NUMBER/'
+				sh 'sudo cp /var/lib/jenkins/workspace/$PROJECT_NAME/target/website.war /code/$PROJECT_NAME/$BUILD_NUMBER/'
 				sh 'sudo cp /var/lib/jenkins/workspace/$PROJECT_NAME/Dockerfile /code/$PROJECT_NAME/$BUILD_NUMBER/'
-				sudo docker build -f /code/$PROJECT_NAME/$BUILD_NUMBER/Dockerfile -t iamdevopstrainer/ab-30Sep2021:$BUILD_NUMBER /code/$PROJECT_NAME/$BUILD_NUMBER
+				sudo docker build -f /code/$PROJECT_NAME/$BUILD_NUMBER/Dockerfile -t palakagrawaljk/ab-30jan2022:$BUILD_NUMBER /code/$PROJECT_NAME/$BUILD_NUMBER
 			}
 		}
 
@@ -50,7 +50,7 @@ pipeline
 		{
 			steps
 			{
-				sh 'sudo docker push iamdevopstrainer/ab-30Sep2021:$BUILD_NUMBER'
+				sh 'sudo docker push palakagrawaljk/ab-30jan2022:$BUILD_NUMBER'
 			}
 		}
 
@@ -58,7 +58,7 @@ pipeline
 		{
 			steps
 			{
-				sh 'sudo docker run -itd -P iamdevopstrainer/ab-30Sep2021:$BUILD_NUMBER'
+				sh 'sudo docker run -itd -P palakagrawaljk/ab-30jan2021:$BUILD_NUMBER'
 			}
 		}
 		

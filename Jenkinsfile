@@ -39,10 +39,10 @@ pipeline
 		{
 			steps
 			{
-				sh 'mkdir -p /code/$PROJECT_NAME/$BUILD_NUMBER'
-				sh 'sudo cp /var/lib/jenkins/workspace/$PROJECT_NAME/target/website.war /code/$PROJECT_NAME/$BUILD_NUMBER/'
-				sh 'sudo cp /var/lib/jenkins/workspace/$PROJECT_NAME/Dockerfile /code/$PROJECT_NAME/$BUILD_NUMBER/'
-				sh sudo docker build -f /code/$PROJECT_NAME/$BUILD_NUMBER/Dockerfile -t palakagrawaljk/ab-30jan2022:$BUILD_NUMBER /code/$PROJECT_NAME/$BUILD_NUMBER
+				sh 'mkdir -p /code/web/$BUILD_NUMBER'
+				sh 'sudo cp /var/lib/jenkins/workspace/web/target/website.war /code/web/$BUILD_NUMBER/'
+				sh 'sudo cp /var/lib/jenkins/workspace/web/Dockerfile /code/web/$BUILD_NUMBER/'
+				sh 'sudo docker build -f /code/web/$BUILD_NUMBER/Dockerfile -t palakagrawal25/ab-30jan2022:$BUILD_NUMBER /code/web/$BUILD_NUMBER
 			}
 		}
 
@@ -50,7 +50,7 @@ pipeline
 		{
 			steps
 			{
-				sh 'sudo docker push palakagrawaljk/ab-30jan2022:$BUILD_NUMBER'
+				sh 'sudo docker push palakagrawal25/ab-30jan2022:$BUILD_NUMBER'
 			}
 		}
 
@@ -58,7 +58,7 @@ pipeline
 		{
 			steps
 			{
-				sh 'sudo docker run -itd -P palakagrawaljk/ab-30jan2021:$BUILD_NUMBER'
+				sh 'sudo docker run -itd -P palakagrawal25/ab-30jan2022:$BUILD_NUMBER'
 			}
 		}
 		

@@ -19,7 +19,7 @@ pipeline
 			{
 				sh 'sudo mkdir -p /code/web/$BUILD_NUMBER'
 				sh 'sudo cp -r /var/lib/jenkins/workspace/web/ /code/web/$BUILD_NUMBER/'
-				sh 'sudo cp /var/lib/jenkins/workspace/web/Dockerfile /code/web/$BUILD_NUMBER/'
+				sh 'sudo cp /var/lib/jenkins/workspace/web/website/Dockerfile /code/web/$BUILD_NUMBER/'
 				sh 'sudo docker build -f /code/web/$BUILD_NUMBER/Dockerfile -t palakagrawal25/ab-30jan2022:$BUILD_NUMBER /code/web/$BUILD_NUMBER'
 			}
 		}

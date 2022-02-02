@@ -7,7 +7,7 @@ pipeline
 		{
 			steps
 			{
-				git 'https://github.com/edureka-devops/projCert'
+				git 'https://github.com/palakagrawaljk/projCert'
 			}
 		}
 		

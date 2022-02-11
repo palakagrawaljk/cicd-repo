@@ -36,7 +36,7 @@ pipeline
 		{
 			steps
 			{
-				sh 'sudo docker run -itd -d palakagrawal25/php:$BUILD_NUMBER -p 80:80 --name php2-apache'
+				sh 'sudo docker run -itd -d palakagrawal25/php:$BUILD_NUMBER -p 7000:80 --name php2-apache'
 			}
 		}
 		

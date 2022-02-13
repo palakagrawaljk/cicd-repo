@@ -37,7 +37,7 @@ pipeline
 			steps
 			{
 				
-				sh 'sudo docker run -p 49125:80 -d palakagrawal25/php:$BUILD_NUMBER'
+				sh 'sudo docker run -p 49105:80 -d palakagrawal25/php:$BUILD_NUMBER'
 			}
 		}
 		

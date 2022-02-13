@@ -20,7 +20,7 @@ pipeline
 				sh 'sudo mkdir -p /code/web/$BUILD_NUMBER'
 				sh 'sudo cp -r /var/lib/jenkins/workspace/web/ /code/web/$BUILD_NUMBER/'
 				sh 'sudo cp /var/lib/jenkins/workspace/web/website/docker2.yml /code/web/$BUILD_NUMBER/'
-				sh 'sudo ansible-playbook docker2.yml'
+				sh 'sudo ansible-playbook /code/web/$BUILD_NUMBER/docker2.yml'
 				sh 'sudo cp /var/lib/jenkins/workspace/web/website/Dockerfile /code/web/$BUILD_NUMBER/'
 				sh 'sudo docker build -f /code/web/$BUILD_NUMBER/Dockerfile -t palakagrawal25/php:$BUILD_NUMBER /code/web/$BUILD_NUMBER'
 			}
